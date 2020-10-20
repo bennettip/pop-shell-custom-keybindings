@@ -187,3 +187,6 @@ dconf write ${KEYS_SHELL}/pop-monitor-up "['<Control><Shift><Alt>Up','<Control><
 dconf write ${KEYS_SHELL}/pop-monitor-left "['<Control><Shift><Alt>Left','<Control><Shift><Alt>${left}']"
 # Move window to the rightward monitor
 dconf write ${KEYS_SHELL}/pop-monitor-right "['<Control><Shift><Alt>Right','<Control><Shift><Alt>${right}']"
+
+# The current active-hint-color in RGBA
+dconf write ${KEYS_SHELL}/hint-color-rgba "'rgba(166,206,246,1)'"
