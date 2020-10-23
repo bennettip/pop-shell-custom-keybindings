@@ -48,10 +48,10 @@ dconf write ${KEYS_GNOME_WM}/move-to-monitor-right "@as []"
 dconf write ${KEYS_GNOME_WM}/move-to-workspace-down "@as []"
 # Move window one workspace up: replace by pop-workspace-up
 dconf write ${KEYS_GNOME_WM}/move-to-workspace-up "@as []"
-# Move window one workspace to the left
-dconf write ${KEYS_GNOME_WM}/move-to-workspace-left "['<Super><Shift>Left','<Super><Shift>${left}']"
-# Move window one workspace to the right
-dconf write ${KEYS_GNOME_WM}/move-to-workspace-right "['<Super><Shift>Right','<Super><Shift>${right}']"
+# Move window one workspace to the left: restore default
+dconf write ${KEYS_GNOME_WM}/move-to-workspace-left "['<Control><Shift><Alt>Left','<Control><Shift><Alt>${left}']"
+# Move window one workspace to the right restore default
+dconf write ${KEYS_GNOME_WM}/move-to-workspace-right "['<Control><Shift><Alt>Right','<Control><Shift><Alt>${right}']"
 
 # Move window to workspaces
 dconf write ${KEYS_GNOME_WM}/move-to-workspace-1 "['<Super><Shift>1']"
@@ -89,13 +89,13 @@ dconf write ${KEYS_GNOME_WM}/unmaximize "@as []"
 # Lock screen
 dconf write ${KEYS_MEDIA}/screensaver "['<Super>Escape']"
 # Home folder
-dconf write ${KEYS_MEDIA}/home "@as []"
+dconf write ${KEYS_MEDIA}/home "['']"
 # Launch email client
-dconf write ${KEYS_MEDIA}/email "@as []"
+dconf write ${KEYS_MEDIA}/email "['']"
 # Launch web browser
-dconf write ${KEYS_MEDIA}/www "@as []"
+dconf write ${KEYS_MEDIA}/www "['']"
 # Rotate Video Lock
-dconf write ${KEYS_MEDIA}/rotate-video-lock-static "@as []"
+dconf write ${KEYS_MEDIA}/rotate-video-lock-static "['']"
 
 # Close Window
 dconf write ${KEYS_GNOME_WM}/close "['<Super><Shift>q']"
@@ -179,14 +179,18 @@ dconf write ${KEYS_SHELL}/tile-resize-up "['Up','${up}']"
 dconf write ${KEYS_SHELL}/tile-resize-right "['Right','${right}']"
 
 # ------- Workspace Management
+# Move window to the lower workspace
+dconf write ${KEYS_SHELL}/pop-workspace-down "['<Control><Shift><Alt>Down','<Control><Shift><Alt>${down}']"
+# Move window to the upper workspace
+dconf write ${KEYS_SHELL}/pop-workspace-up "['<Control><Shift><Alt>Up','<Control><Shift><Alt>${up}']"
 # Move window to the lower monitor
-dconf write ${KEYS_SHELL}/pop-monitor-down "['<Control><Shift><Alt>Down','<Control><Shift><Alt>${down}']"
+dconf write ${KEYS_SHELL}/pop-monitor-down "['<Super><Shift>Down','<Super><Shift>${down}']"
 # Move window to the upper monitor
-dconf write ${KEYS_SHELL}/pop-monitor-up "['<Control><Shift><Alt>Up','<Control><Shift><Alt>${up}']"
+dconf write ${KEYS_SHELL}/pop-monitor-up "['<Super><Shift>Up','<Super><Shift>${up}']"
 # Move window to the leftward monitor
-dconf write ${KEYS_SHELL}/pop-monitor-left "['<Control><Shift><Alt>Left','<Control><Shift><Alt>${left}']"
+dconf write ${KEYS_SHELL}/pop-monitor-left "['<Super><Shift>Left','<Super><Shift>${left}']"
 # Move window to the rightward monitor
-dconf write ${KEYS_SHELL}/pop-monitor-right "['<Control><Shift><Alt>Right','<Control><Shift><Alt>${right}']"
+dconf write ${KEYS_SHELL}/pop-monitor-right "['<Super><Shift>Right','<Super><Shift>${right}']"
 
 # The current active-hint-color in RGBA
 dconf write ${KEYS_SHELL}/hint-color-rgba "'rgba(166,206,246,1)'"
